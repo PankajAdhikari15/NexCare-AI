@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+* { box-sizing: border-box; }
+
+.stApp {
+  background: #f8f5f0 !important;
+  font-family: 'Lato', sans-serif !important;
+  color: #2d3748 !important;
+}
+
+#MainMenu, footer { visibility: hidden; }
+[data-testid="stSidebarNav"] { display: none !important; }
+.block-container { padding: 1rem 2rem 4rem !important; max-width: 1100px !important; }
+
+/* ── Header ── */
+.pat-header {
+  background: linear-gradient(135deg, #134e4a 0%, #0f3460 100%);
+  border-radius: 18px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.pat-header-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #ccfbf1;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.pat-header-sub {
+  font-size: 0.82rem;
+  color: #5eead4;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Login card ── */
+.pat-login-wrap {
+  max-width: 440px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border: 1px solid #e7e3dc;
+}
+.pat-login-icon { font-size: 2.8rem; text-align: center; display: block; margin-bottom: 0.5rem; }
+.pat-login-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #134e4a;
+  text-align: center;
+  margin: 0 0 0.3rem;
+}
+.pat-login-hint {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+/* ── Profile card ── */
+.pat-profile {
+  background: linear-gradient(135deg, #134e4a, #1a6b5a);
+  border-radius: 18px;
+  padding: 1.8rem 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.pat-profile::after {
+  content: '✚';
+  position: absolute;
+  right: -1.5rem;
+  top: -1.5rem;
+  font-size: 8rem;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+}
+.pat-pid {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border-radius: 999px;
+  padding: 3px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ccfbf1;
+  margin-bottom: 0.6rem;
+}
+.pat-pname {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+}
+.pat-pmeta { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0 0 1.2rem; }
+.pat-ptags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pat-tag {
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  color: #ccfbf1;
+  font-weight: 400;
+}
+
+/* ── Vitals row ── */
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.vital-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  text-align: center;
+  border: 1px solid #e7e3dc;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.15s ease;
+}
+.vital-card:hover { transform: translateY(-2px); }
+.vital-icon { font-size: 1.4rem; display: block; margin-bottom: 0.3rem; }
+.vital-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #134e4a;
+  line-height: 1;
+  display: block;
+  margin-bottom: 2px;
+}
+.vital-unit { font-size: 0.7rem; color: #9ca3af; display: block; margin-bottom: 4px; }
+.vital-label { font-size: 0.72rem; color: #6b7280; }
+.vital-alert { color: #dc2626 !important; }
+
+/* ── Section cards ── */
+.section-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e7e3dc;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #134e4a;
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #e7e3dc;
+}
+
+/* ── Treatment timeline ── */
+.timeline { position: relative; padding-left: 1.5rem; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 2px;
+  background: #d1fae5;
+}
+.timeline-item { position: relative; margin-bottom: 1.3rem; }
+.timeline-item:last-child { margin-bottom: 0; }
+.tl-dot {
+  position: absolute;
+  left: -1.22rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #134e4a;
+  border: 2px solid #d1fae5;
+}
+.tl-dot-first { background: #10b981; width: 12px; height: 12px; left: -1.31rem; }
+.tl-date {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  font-weight: 400;
+  margin-bottom: 1px;
+}
+.tl-type {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #134e4a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+.tl-desc { font-size: 0.85rem; color: #4b5563; line-height: 1.5; }
+
+/* ── Medication pills ── */
+.med-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+.med-pill {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  color: #065f46;
+}
+.med-pill-disc {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.med-name { font-weight: 700; }
+.med-sub  { color: #6b7280; font-size: 0.72rem; margin-top: 1px; }
+
+/* ── Lab result table ── */
+.lab-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+.lab-table th {
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+  border-bottom: 1px solid #f0ebe3;
+}
+.lab-table td {
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid #f8f4ef;
+  color: #374151;
+  vertical-align: top;
+}
+.lab-table tr:last-child td { border-bottom: none; }
+.lab-status-normal    { color: #065f46; font-weight: 600; }
+.lab-status-borderline{ color: #92400e; font-weight: 600; }
+.lab-status-abnormal  { color: #991b1b; font-weight: 600; }
+
+/* ── Risk badge ── */
+.risk-high   { background:#fef2f2; color:#991b1b; border:1px solid #fecaca; border-radius:8px; padding:4px 12px; font-weight:700; font-size:0.8rem; }
+.risk-medium { background:#fffbeb; color:#92400e; border:1px solid #fde68a; border-radius:8px; padding:4px 12px; font-weight:700; font-size:0.8rem; }
+.risk-low    { background:#f0fdf4; color:#065f46; border:1px solid #bbf7d0; border-radius:8px; padding:4px 12px; font-weight:700; font-size:0.8rem; }
+
+/* ── Doctor info card ── */
+.doc-info-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f0fdf4;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  border: 1px solid #bbf7d0;
+}
+.doc-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: #134e4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.doc-name  { font-weight: 700; color: #134e4a; font-size: 0.95rem; }
+.doc-spec  { font-size: 0.78rem; color: #6b7280; }
+.doc-phone { font-size: 0.78rem; color: #134e4a; font-weight: 600; margin-top: 2px; }
+
+/* ── Streamlit widget overrides for patient portal ── */
+[data-testid="stTextInput"] input {
+  background: #f8f5f0 !important;
+  border: 1.5px solid #d1d5db !important;
+  border-radius: 10px !important;
+  color: #1f2937 !important;
+  font-family: 'Lato', sans-serif !important;
+}
+[data-testid="stTextInput"] input:focus {
+  border-color: #134e4a !important;
+  box-shadow: 0 0 0 3px rgba(19,78,74,0.1) !important;
+}
+.stButton > button {
+  background: #134e4a !important;
+  color: #f0fdf4 !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  padding: 0.6rem 2rem !important;
+}
+.stButton > button:hover {
+  background: #0f3460 !important;
+}
+[data-testid="stMetricValue"]  { color: #134e4a !important; font-weight: 700 !important; }
+[data-testid="stMetricLabel"]  { color: #6b7280 !important; font-size: 0.78rem !important; }
+[data-testid="stSidebar"]      { background: #fff !important; border-right: 1px solid #e7e3dc !important; }
+[data-testid="stSidebar"] *    { color: #374151 !important; }
+
+@media (max-width: 640px) {
+  .vitals-grid    { grid-template-columns: repeat(2, 1fr); }
+  .pat-ptags      { gap: 0.3rem; }
+  .block-container{ padding: 1rem !important; }
+}
