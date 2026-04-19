@@ -2,7 +2,7 @@
 
 NexCare AI is a high-performance, multi-page Hospital Management System (HMS) built with Streamlit. It provides a real-time command centre for hospital administrators, a secure portal for patients, and a clinical management tool for doctors.
 
-## 🚀 Key Features
+##  Key Features
 
 - **Admin Panel**: Real-time monitoring of resources (beds, staff, ambulances), automated patient risk assessment, and an AI-driven Crisis Mode for emergency surges.
 - **Patient Portal**: Secure access to health records, clinical vitals tracking, treatment timelines, and lab results.
